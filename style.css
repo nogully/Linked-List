@@ -7,14 +7,15 @@ body {
 main {
   width: 50%;
   text-align: center;
-  display: inline-block;
+  position: absolute;
+  left: 0;
 }
 
 h1 {
   font-weight: 800;
   margin: 25px 0px;
   display: block;
-  font-size: 30pt;
+  font-size: 200%;
 }
 
 img {
@@ -39,11 +40,80 @@ input {
   background-color: #FFC107;
   font-weight: 800;
   color: #FFF;
-  font-size: 14pt;
-/*  box-sizing: 70%;
-*/}
+  font-size: 12pt;
+  text-decoration: none;
+  padding: 5px;
+}
+
+#submit-button:hover {
+  background-color: #FFD773;
+}
 
 section {
   width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background-color: #CFD8DC;
+}
+
+article {
+  border: 1px solid #607D8B;
+  background-color: #FFF;
+  margin: 10px 10px 0px 10px;
+  color: #455A64;
+  padding: 10px;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 14pt;
+}
+
+a {
+  text-decoration-color: #CCC;
+  color: #455A64;
+}
+
+a:hover {
+  text-decoration-color: #FFC107;
+  font-weight: 800;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #CFD8DC;
+}
+
+button {
+  border: 0;
+  background-color: #FFF;
+  color: #455A64;
+  text-decoration: underline;
+  text-decoration-color: #CCC;
+  padding: 0;
+  margin: 0;
+}
+
+button:hover {
+  text-decoration-color: #FFC107;
+  font-weight: 800;
+}
+
+.delete {
   float: right;
 }
+
+@media screen and (max-width: 400px) {
+  main {
+    width: 100%;
+  }
+  
+  section {
+    width: 100%;
+    top: 70px;
+  }
+}
+
+
