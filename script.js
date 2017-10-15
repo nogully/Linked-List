@@ -16,17 +16,15 @@ submitButton.on('click', submitEntry);
 
 // FUNCTIONS
 function submitEntry() {
-  cardList.append('<article class="card">');
-  addH2();
-  cardList.append('</article>');
+  cardList.append(`<article class='card'>
+    <h2> ${ websiteName.val() } </h2>
+    <hr>
+    <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
+    <hr>
+    <button class='read'>Read</button>
+    <button class='delete'>Delete</button>
+    </article>`);
 }
-
-function addH2() {
-  var title = '<h2>' + websiteName.val() + '</h2>';
-  cardList.append(title);
-}
-
-
 
 
 
