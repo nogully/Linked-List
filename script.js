@@ -9,11 +9,17 @@ var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
 
+var readButton = $('.read');
+
+
+
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 cardList.on('click', '.delete', deleteEntry);
+websiteName.on('keyup', enableOrDisable);
+websiteUrl.on('keyup', enableOrDisable);
 
 cardList.on('click', '.delete', deleteEntry);
 
@@ -37,6 +43,12 @@ function submitEntry() {
 function deleteEntry() {
     $(this).parent().remove();
 } 
+
+function enableOrDisable() {
+  websiteName.val().length > 0 && websiteUrl.val().length > 0 ? 
+  submitButton.removeAttr('disabled', true) : 
+  submitButton.attr('disabled');
+}
 
 function toggleRead() {
     $(this).toggleClass('clicked');
