@@ -8,12 +8,16 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
-var deleteButton = $('.delete');
+var readButton = $('.read');
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 cardList.on('click', '.delete', deleteEntry);
+
+cardList.on('click', readButton, readCard);
+
+cardList.on('click', deleteButton, deleteEntry);
 
 
 // FUNCTIONS
@@ -35,5 +39,7 @@ function deleteEntry() {
 
 
 
+
+// END JQUERY
 });
 
