@@ -29,14 +29,14 @@ input {
   color: #455A64;
   font-weight: 400;
   font-size: 14pt;
-  border: none;
+  border: 1px solid #CFD8DC;
   padding: 2px;
 }
 
 #submit-button {
   margin: 0px 25px 25px 25px;
   width: 70%;
-  border: 0px;
+  border: 2px solid #FFC107;
   background-color: #FFC107;
   font-weight: 800;
   color: #FFF;
@@ -47,6 +47,7 @@ input {
 
 #submit-button:hover {
   background-color: #FFD773;
+  border: 2px solid #FFD773;
 }
 
 section {
@@ -63,6 +64,10 @@ article {
   margin: 10px 10px 0px 10px;
   color: #455A64;
   padding: 10px;
+}
+
+article.read {
+  border: none;
 }
 
 h2 {
@@ -103,6 +108,10 @@ button:hover {
 
 .delete {
   float: right;
+}
+
+button.clicked {
+  color: #CCC;
 }
 
 @media screen and (max-width: 400px) {

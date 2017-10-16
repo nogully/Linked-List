@@ -8,16 +8,18 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
-var readButton = $('.read');
+
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 cardList.on('click', '.delete', deleteEntry);
 
-cardList.on('click', readButton, readCard);
+cardList.on('click', '.delete', deleteEntry);
 
-cardList.on('click', deleteButton, deleteEntry);
+cardList.on('click', '.read', toggleRead);
+
+
 
 
 // FUNCTIONS
@@ -33,8 +35,13 @@ function submitEntry() {
 }
 
 function deleteEntry() {
-  $(this).parent().remove();
+    $(this).parent().remove();
 } 
+
+function toggleRead() {
+    $(this).toggleClass('clicked');
+    $(this).parent().toggleClass('read');
+}
 
 
 
