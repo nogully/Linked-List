@@ -9,8 +9,6 @@ var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
 
-var readButton = $('.read');
-
 
 
 
@@ -20,9 +18,7 @@ submitButton.on('click', submitEntry);
 cardList.on('click', '.delete', deleteEntry);
 websiteName.on('keyup', enableOrDisable);
 websiteUrl.on('keyup', enableOrDisable);
-
 cardList.on('click', '.delete', deleteEntry);
-
 cardList.on('click', '.read', toggleRead);
 
 
@@ -38,6 +34,7 @@ function submitEntry() {
     <button class='read'>Read</button>
     <button class="delete">Delete</button>
     </article>`);
+  console.log($('.card')[0]);
 }
 
 function deleteEntry() {
@@ -56,7 +53,10 @@ function toggleRead() {
 }
 
 
-
+//jquery.slideDown()
+//error message on submit button
+//regex expression to match valid url
+//add 
 
 
 // END JQUERY
