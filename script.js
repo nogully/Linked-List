@@ -8,10 +8,12 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
+var deleteButton = $('.delete');
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
+cardList.on('click', '.delete', deleteEntry);
 
 
 // FUNCTIONS
@@ -22,11 +24,13 @@ function submitEntry() {
     <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
     <hr>
     <button class='read'>Read</button>
-    <button class='delete'>Delete</button>
+    <button class="delete">Delete</button>
     </article>`);
 }
 
-
+function deleteEntry() {
+  $(this).parent().remove();
+} 
 
 
 
