@@ -8,20 +8,23 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
-
-
-
+var readCards = $('.clicked').length;
+var totalCards = $('article').length;
+var unreadCards = totalCards - readCards;
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
-cardList.on('click', '.delete', deleteEntry);
 websiteName.on('keyup', enableOrDisable);
 websiteUrl.on('keyup', enableOrDisable);
 cardList.on('click', '.delete', deleteEntry);
 cardList.on('click', '.read', toggleRead);
 
-
+// $( "#clickme" ).click(function() {
+//   $( "#book" ).slideDown( "slow", function() {
+//     // Animation complete.
+//   });
+// });
 
 
 // FUNCTIONS
@@ -34,24 +37,39 @@ function submitEntry() {
     <button class='read'>Read</button>
     <button class="delete">Delete</button>
     </article>`);
-  console.log($('.card')[0]);
+    updateTotal();
+    updateReadUnread();
 }
 
 function deleteEntry() {
     $(this).parent().remove();
+    updateTotal();
+    updateReadUnread();
 } 
 
 function enableOrDisable() {
   websiteName.val().length > 0 && websiteUrl.val().length > 0 ? 
-  submitButton.removeAttr('disabled', true) : 
-  submitButton.attr('disabled');
+    submitButton.removeAttr('disabled', true) : 
+    submitButton.attr('disabled');
 }
 
 function toggleRead() {
     $(this).toggleClass('clicked');
     $(this).parent().toggleClass('read');
+    updateReadUnread();
+  }
+
+function updateTotal() {
+  totalCards = $('article').length;
+  $('#total-number').text(totalCards);
 }
 
+function updateReadUnread() {
+    readCards = $('.clicked').length;
+    unreadCards = totalCards - readCards;
+    $('#read-number').text(readCards)
+    $('#unread-number').text(unreadCards);
+}
 
 //jquery.slideDown()
 //error message on submit button
