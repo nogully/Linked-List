@@ -65,6 +65,10 @@ article {
   padding: 10px;
 }
 
+article.read {
+  border: none;
+}
+
 h2 {
   font-weight: 800;
   font-size: 14pt;
@@ -103,6 +107,10 @@ button:hover {
 
 .delete {
   float: right;
+}
+
+button.clicked {
+  color: #CCC;
 }
 
 @media screen and (max-width: 400px) {

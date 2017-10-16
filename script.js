@@ -8,16 +8,16 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
-var readButton = $('.read');
-var deleteButton = $('.delete');
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 
-cardList.on('click', readButton, readCard);
+cardList.on('click', '.delete', deleteEntry);
 
-cardList.on('click', deleteButton, deleteEntry);
+cardList.on('click', '.read', toggleRead);
+
+
 
 
 // FUNCTIONS
@@ -32,15 +32,14 @@ function submitEntry() {
     </article>`);
 }
 
-function readCard(){
-    console.log("you clicked read: ", this);
-}
+function deleteEntry() {
+    $(this).parent().remove();
+} 
 
-function deleteEntry(){
-    console.log("you clicked delete: ", this);
-    newCard.remove();
+function toggleRead() {
+    $(this).toggleClass('clicked');
+    $(this).parent().toggleClass('read');
 }
-
 
 
 
