@@ -10,8 +10,10 @@ var cardList = $('#card-list');
 var newCard = $('.card');
 
 
+
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
+cardList.on('click', '.delete', deleteEntry);
 
 cardList.on('click', '.delete', deleteEntry);
 
@@ -28,7 +30,7 @@ function submitEntry() {
     <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
     <hr>
     <button class='read'>Read</button>
-    <button class='delete'>Delete</button>
+    <button class="delete">Delete</button>
     </article>`);
 }
 
@@ -40,6 +42,7 @@ function toggleRead() {
     $(this).toggleClass('clicked');
     $(this).parent().toggleClass('read');
 }
+
 
 
 
