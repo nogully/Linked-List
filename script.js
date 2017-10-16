@@ -8,12 +8,13 @@ var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
-var deleteButton = $('.delete');
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 cardList.on('click', '.delete', deleteEntry);
+websiteName.on('keyup', enableOrDisable);
+websiteUrl.on('keyup', enableOrDisable);
 
 
 // FUNCTIONS
@@ -32,7 +33,11 @@ function deleteEntry() {
   $(this).parent().remove();
 } 
 
-
+function enableOrDisable() {
+  websiteName.val().length > 0 && websiteUrl.val().length > 0 ? 
+  submitButton.removeAttr('disabled', true) : 
+  submitButton.attr('disabled');
+}
 
 
 });
