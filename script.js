@@ -9,11 +9,11 @@ var submitButton = $('#submit-button');
 var cardList = $('#card-list');
 var newCard = $('.card');
 var readButton = $('.read');
-var deleteButton = $('.delete');
 
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
+cardList.on('click', '.delete', deleteEntry);
 
 cardList.on('click', readButton, readCard);
 
@@ -28,18 +28,13 @@ function submitEntry() {
     <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
     <hr>
     <button class='read'>Read</button>
-    <button class='delete'>Delete</button>
+    <button class="delete">Delete</button>
     </article>`);
 }
 
-function readCard(){
-    console.log("you clicked read: ", this);
-}
-
-function deleteEntry(){
-    console.log("you clicked delete: ", this);
-    newCard.remove();
-}
+function deleteEntry() {
+  $(this).parent().remove();
+} 
 
 
 
