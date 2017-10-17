@@ -56,7 +56,7 @@ function toggleRead() {
   }
 
 function deleteRead() {
-  cardList.removeClass('read');
+  $('.read').remove();
 }
 
 function updateTotal() {
