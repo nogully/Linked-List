@@ -20,12 +20,6 @@ websiteUrl.on('keyup', enableOrDisable);
 cardList.on('click', '.delete', deleteEntry);
 cardList.on('click', '.read', toggleRead);
 
-// $( "#clickme" ).click(function() {
-//   $( "#book" ).slideDown( "slow", function() {
-//     // Animation complete.
-//   });
-// });
-
 
 // FUNCTIONS
 function submitEntry() {
@@ -37,6 +31,7 @@ function submitEntry() {
     <button class='read'>Read</button>
     <button class="delete">Delete</button>
     </article>`);
+    //cardList.find('.card:last').slideDown('fast');
     updateTotal();
     updateReadUnread();
 }
@@ -54,10 +49,17 @@ function enableOrDisable() {
 }
 
 function toggleRead() {
-    $(this).toggleClass('clicked');
     $(this).parent().toggleClass('read');
+    $(this).toggleClass('clicked');
+    console.log('current', $(this));
+    console.log('closest', $(this).closest());
+    console.log('parent', $(this).parent());
     updateReadUnread();
   }
+
+function deleteRead() {
+  $(*).find('clicked').parent().remove();
+}
 
 function updateTotal() {
   totalCards = $('article').length;
@@ -74,8 +76,8 @@ function updateReadUnread() {
 //jquery.slideDown()
 //error message on submit button
 //regex expression to match valid url
-//add 
-
+ 
+websiteName.focus();
 
 // END JQUERY
 });
