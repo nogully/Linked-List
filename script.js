@@ -15,7 +15,7 @@ var clearReadButton = $('.clear-all-read');
 
 
 // EVENT LISTENERS
-submitButton.on('click', submitEntry);
+submitButton.on('click', validateUrl);
 websiteName.on('keyup', enableOrDisable);
 websiteUrl.on('keyup', enableOrDisable);
 cardList.on('click', '.delete', deleteEntry);
@@ -71,12 +71,19 @@ function updateReadUnread() {
     $('#unread-number').text(unreadCards);
 }
 
+function validateUrl() {
+  if (websiteUrl.val().match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/)) {
+    submitButton.text('Enter');
+    submitEntry();
+  }
+  else {
+    submitButton.text('Enter valid URL'); 
+  }
+}
+
 //jquery.slideDown()
-//error message on submit button
-//regex expression to match valid url
  
 websiteName.focus();
-
 // END JQUERY
 });
 
