@@ -31,7 +31,7 @@ function submitEntry() {
   cardList.append(`<article class='card'>
     <h2> ${ websiteName.val() } </h2>
     <hr>
-    <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
+    <a href='${ websiteUrl.val() }' target='_blank'>${ websiteUrl.val() }</a>
     <hr>
     <button class='read-button'>Read</button>
     <button class="delete">Delete</button>
