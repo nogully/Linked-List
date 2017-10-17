@@ -11,14 +11,19 @@ var newCard = $('.card');
 var readCards = $('.clicked').length;
 var totalCards = $('article').length;
 var unreadCards = totalCards - readCards;
-
+var clearReadButton = $('.clear-all-read');
 
 // EVENT LISTENERS
 submitButton.on('click', submitEntry);
 websiteName.on('keyup', enableOrDisable);
 websiteUrl.on('keyup', enableOrDisable);
 cardList.on('click', '.delete', deleteEntry);
-cardList.on('click', '.read', toggleRead);
+cardList.on('click', '.read-button', toggleRead);
+/*cardList.on('click', '.read', function(event) {
+  event.stopPropogation();
+  toggleRead();
+});*/
+clearReadButton.on('click', deleteRead);
 
 
 // FUNCTIONS
@@ -28,12 +33,12 @@ function submitEntry() {
     <hr>
     <a href='${ websiteUrl.val() }'>${ websiteUrl.val() }</a>
     <hr>
-    <button class='read'>Read</button>
+    <button class='read-button'>Read</button>
     <button class="delete">Delete</button>
     </article>`);
     //cardList.find('.card:last').slideDown('fast');
     updateTotal();
-    updateReadUnread();
+    updateReadUnread(); 
 }
 
 function deleteEntry() {
@@ -49,16 +54,16 @@ function enableOrDisable() {
 }
 
 function toggleRead() {
-    $(this).parent().toggleClass('read');
+    $(this).closest('article').toggleClass('read');
     $(this).toggleClass('clicked');
     console.log('current', $(this));
-    console.log('closest', $(this).closest());
-    console.log('parent', $(this).parent());
+    console.log('closest', $(this).closest('article'));
     updateReadUnread();
   }
 
 function deleteRead() {
-  $(*).find('clicked').parent().remove();
+  $('*').find('clicked').parent().remove();
+  console.log($('*').find('clicked'));
 }
 
 function updateTotal() {
