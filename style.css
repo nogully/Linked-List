@@ -12,15 +12,16 @@ main {
 }
 
 h1 {
-  /*6.5vw*/ 
+  font-size: 4.75vw;
   font-weight: 800;
   margin: 25px 0px;
   display: block;
-  font-size: 200%;
+/*  font-size: 200%;*/
 }
 
 img {
-  width: 10%;
+  /*width: 10%;*/
+  width: 8vw;
 }
 
 input {
@@ -34,21 +35,38 @@ input {
   padding: 2px;
 }
 
+input:hover {
+  border: 1px solid #FFC107;
+}
+
+input:focus {
+  outline: 0;
+  border: 2px solid #FFC107;
+}
+
 #submit-button {
   margin: 0px 25px 25px 25px;
   width: 70%;
-  border: 2px solid #FFC107;
+  /*border: 2px solid #FFC107;*/
   background-color: #FFC107;
   font-weight: 800;
   color: #FFF;
   font-size: 12pt;
   text-decoration: none;
-  padding: 5px;
+  padding: 10px;
 }
 
 #submit-button:hover {
   background-color: #FFD773;
-  border: 2px solid #FFD773;
+  /*border: 2px solid #FFD773;*/
+}
+
+#submit-button:focus {
+  outline: 0;
+}
+
+#submit-button:disabled {
+  background-color: #CCC;
 }
 
 section {
@@ -69,12 +87,24 @@ article {
 }
 
 article.read {
-  border: none;
+  background-color: #F2F3F4;
 }
 
 h2 {
   font-weight: 800;
   font-size: 14pt;
+}
+
+h3{
+  color: #455A64;
+  font-weight: 400;
+  font-size: 12pt;
+}
+
+span {
+  font-weight: 800;
+  padding: 0vw 2vw;
+  border: 1px solid #CCC;
 }
 
 a {
@@ -113,7 +143,18 @@ button:hover {
 }
 
 button.clicked {
-  color: #CCC;
+  color: #F05A28;
+}
+
+div {
+  background-color: #FFC107;
+  padding: 10px 25px;
+  text-align: center;
+}
+
+.clear-all-read {
+  background-color: #FFC107;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 400px) {
