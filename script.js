@@ -23,12 +23,13 @@ cardList.on('click', '.read-button', toggleRead);
 clearReadButton.on('click', deleteRead);
 
 
+
 // FUNCTIONS
 function submitEntry() {
   cardList.append(`<article class='card'>
     <h2> ${ websiteName.val() } </h2>
     <hr>
-    <a href='${ websiteUrl.val() }' target='_blank'>${ websiteUrl.val() }</a>
+    <a href='${ http() + websiteUrl.val() }' target='_blank'>${ websiteUrl.val() }</a>
     <hr>
     <button class='read-button'>Read</button>
     <button class="delete">Delete</button>
@@ -81,7 +82,12 @@ function validateUrl() {
   }
 }
 
-//jquery.slideDown()
+function http() {
+  if((/^(http[s]?:\/\/)/).test(websiteUrl.val()) === false) {
+    return `http://`;
+  }
+  else {return '';}
+};
  
 websiteName.focus();
 // END JQUERY
