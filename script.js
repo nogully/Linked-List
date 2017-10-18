@@ -7,7 +7,6 @@ var websiteName = $('#website-name');
 var websiteUrl = $('#website-url');
 var submitButton = $('#submit-button');
 var cardList = $('#card-list');
-var newCard = $('.card');
 var readCards = $('.clicked').length;
 var totalCards = $('article').length;
 var unreadCards = totalCards - readCards;
@@ -21,7 +20,6 @@ websiteUrl.on('keyup', enableOrDisable);
 cardList.on('click', '.delete', deleteEntry);
 cardList.on('click', '.read-button', toggleRead);
 clearReadButton.on('click', deleteRead);
-
 
 
 // FUNCTIONS
