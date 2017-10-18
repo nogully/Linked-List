@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-  <link rel="stylesheet" type="text/css" href="reset.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800,400" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Linked List</title>
-  <meta charset="UTF-8">
-</head>
-<body>
-  <main id="main">
-    <h1>Linked <img src='linked-list-logo.svg' alt="chain link logo"> List</h1>
-    <input type="text" id="website-name" placeholder="Website Title" name="website">
-    <input type="text" id="website-url" placeholder="Website URL" name="website title">
-    <button id="submit-button" disabled="true">Enter</button>
-  </main>
-  <section id="card-list">
-    <div id="scoreboard">
-      <h3>Total: <span id="total-number">0</span> Read: <span id="read-number">0</span> Unread: <span id="unread-number">0</span></h3>
-      <button class="clear-all-read"><h3>Clear All Read</h3></button>
-    </div>
-    <article class="card">
-      <h2>The Website Title</h2>
-      <hr>
-      <a href="example.com" title="example" class="link-text">Example.com</a>
-      <hr>
-      <button class="read-button">Read</button>
-      <button class="delete">Delete</button>
-    </article>
-  </section>
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Linked List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+  </head>
+  <body>
+    <main id="main">
+      <h1>Linked <img src='linked-list-logo.svg' alt="chain link logo"> List</h1>
+      <input type="text" id="website-name" placeholder="Website Title" name="website">
+      <input type="text" id="website-url" placeholder="Website URL" name="website title">
+      <button id="submit-button" disabled="true">Enter</button>
+    </main>
+    <section id="card-list">
+      <div id="scoreboard">
+        <h3>Total: <span id="total-number">0</span> Read: <span id="read-number">0</span> Unread: <span id="unread-number">0</span>
+        <button class="clear-all-read">Clear All Read</button>
+        </h3>
+      </div>
+      <article class="card">
+        <h2>The Website Title</h2>
+        <a href="example.com" title="example" class="link-text">Example.com</a>
+        <button class="read-button">Read</button>
+        <button class="delete">Delete</button>
+      </article>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery-3.2.1.min.js"><\/script>')</script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
