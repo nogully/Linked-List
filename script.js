@@ -27,9 +27,7 @@ clearReadButton.on('click', deleteRead);
 function submitEntry() {
   cardList.append(`<article class='card'>
     <h2> ${ websiteName.val() } </h2>
-    <hr>
     <a href='${ websiteUrl.val() }' target='_blank'>${ websiteUrl.val() }</a>
-    <hr>
     <button class='read-button'>Read</button>
     <button class="delete">Delete</button>
     </article>`);
@@ -56,7 +54,7 @@ function toggleRead() {
   }
 
 function deleteRead() {
-  cardList.removeClass('read');
+  $('.read').remove();
 }
 
 function updateTotal() {
