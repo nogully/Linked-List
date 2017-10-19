@@ -6,20 +6,20 @@ With a little jQuery under your belt, it’s time to try your hand at building a
 
 In its simplest form, the application should have the following:
 
-1. ~~Two input fields~~
-2. ~~One for the title of the bookmark~~
-3. ~~One for the URL that the bookmark should link to~~
-4. ~~One button for creating the bookmark and adding it to the page~~
-5. ~~A section for all of the created bookmarks; each bookmark should display:~~
-..*~~The title of the bookmark~~
-..*~~The URL of the bookmark (this should be clickable and link to the URL)~~
-..*~~A button to “Mark as Read”~~
-..*~~A button to “Remove” the bookmark~~
+1. Two input fields
+2. One for the title of the bookmark
+3. One for the URL that the bookmark should link to
+4. One button for creating the bookmark and adding it to the page
+5. A section for all of the created bookmarks; each bookmark should display:
+..*The title of the bookmark
+..*The URL of the bookmark (this should be clickable and link to the URL)
+..*A button to “Mark as Read”
+..*A button to “Remove” the bookmark
 
 ##Phase One
 
-1. ~~The user should be able to input a title and URL into the appropriate fields~~
-2. ~~When the user clicks on the button for creating the bookmark, it should be added to the bookmarks section~~
+1. The user should be able to input a title and URL into the appropriate fields
+2. When the user clicks on the button for creating the bookmark, it should be added to the bookmarks section
 3. When the user clicks on the “Mark as Read” button:
 ..*A class of .read should be added to the bookmark
 ..*If it already has the class of .read, it should be removed
